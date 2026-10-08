@@ -32,13 +32,10 @@ function calculateRemainingHours() {
             // If qualifying, subtract hours worked between the breaks from fourteen
             const remainingOndutyHours = (maxTotalDailyHours - hoursWorkedBetweenBreaks);
             // Subtract hours driven between the breaks from eleven
-            let remainingDrivingHours = (maxTotalDailyDrivingHours - hoursDrivenBetweenBreaks);
-
-            // Display remaining fourteen-hour clock.
-            // Display remaining eleven-hour driving clock.
-            if (remainingDrivingHours > remainingOndutyHours) {
-                remainingDrivingHours = remainingOndutyHours;
-            }
+            const remainingDrivingHours = Math.min(
+                maxTotalDailyDrivingHours - hoursDrivenBetweenBreaks,
+                remainingOndutyHours
+            );
             result.textContent = "On-Duty Hours Remaining: " + remainingOndutyHours + ", Driving Hours Remaining: " + remainingDrivingHours
         }
         else {
