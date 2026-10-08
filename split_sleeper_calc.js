@@ -10,7 +10,8 @@ submitBtn.addEventListener("click", function () {
 })
 
 function calculateRemainingHours() {
-    const result = document.getElementById("result");
+    const resultOnduty = document.getElementById("resultOnduty");
+    const resultDriving = document.getElementById("resultDriving");
 
     // User inputs length and type of first break
     const firstBreak = document.getElementById("firstBreak");
@@ -36,13 +37,14 @@ function calculateRemainingHours() {
                 maxTotalDailyDrivingHours - hoursDrivenBetweenBreaks,
                 remainingOndutyHours
             );
-            result.textContent = "On-Duty Hours Remaining: " + remainingOndutyHours + ", Driving Hours Remaining: " + remainingDrivingHours
+            resultOnduty.textContent = "On-Duty Hours Remaining: " + remainingOndutyHours;
+            resultDriving.textContent = "Driving Hours Remaining: " + remainingDrivingHours;
         }
         else {
-            result.textContent = "Breaks do not qualify for split sleeper";
+            resultOnduty.textContent = "Breaks do not qualify for split sleeper";
         }
     }
     else {
-        result.textContent = "Breaks do not qualify for split sleeper";
+        resultOnduty.textContent = "Breaks do not qualify for split sleeper";
     }
 }
