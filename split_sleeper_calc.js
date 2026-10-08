@@ -12,6 +12,8 @@ submitBtn.addEventListener("click", function () {
 function calculateRemainingHours() {
     const resultOnduty = document.getElementById("resultOnduty");
     const resultDriving = document.getElementById("resultDriving");
+    resultOnduty.textContent = "";
+    resultDriving.textContent = "";
 
     // User inputs length and type of first break
     const firstBreak = document.getElementById("firstBreak");

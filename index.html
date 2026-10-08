@@ -22,10 +22,10 @@
                 <label for="firstBreak">Length of First Break: </label>
             </div>
             <div class="col-4 col-md-4">
-                <input type="number" name="firstBreak" id="firstBreak" min="0" max="10">
+                <input type="number" class="form-control" name="firstBreak" id="firstBreak" min="0" max="10" step="any">
             </div>
             <div class="col-8 col-md-4">
-                <select name="dutyStatusFirstBreak" id="dutyStatusFirstBreak">
+                <select class="form-select" name="dutyStatusFirstBreak" id="dutyStatusFirstBreak">
                     <option value="on-duty">On-Duty</option>
                     <option value="off-duty">Off-Duty</option>
                     <option value="driving">Driving</option>
@@ -39,10 +39,11 @@
                 <label for="secondBreak">Length of Second Break: </label>
             </div>
             <div class="col-4 col-md-4">
-                <input type="number" name="secondBreak" id="secondBreak" min="0" max="10">
+                <input type="number" class="form-control" name="secondBreak" id="secondBreak" min="0" max="10"
+                    step="any">
             </div>
             <div class="col-8 col-md-4">
-                <select name="dutyStatusSecondBreak" id="dutyStatusSecondBreak">
+                <select class="form-select" name="dutyStatusSecondBreak" id="dutyStatusSecondBreak">
                     <option value="on-duty">On-Duty</option>
                     <option value="off-duty">Off-Duty</option>
                     <option value="driving">Driving</option>
@@ -56,7 +57,8 @@
                 <label for="hoursWorkedBetweenBreaks">TOTAL Hours Between Breaks: </label>
             </div>
             <div class="col-4">
-                <input type="number" name="hoursWorkedBetweenBreaks" id="hoursWorkedBetweenBreaks" min="0" max="14">
+                <input type="number" class="form-control" name="hoursWorkedBetweenBreaks" id="hoursWorkedBetweenBreaks"
+                    min="0" max="14" step="any">
             </div>
         </div>
 
@@ -65,12 +67,13 @@
                 <label for="hoursDrivenBetweenBreaks">Hours Driven Between Breaks: </label>
             </div>
             <div class="col-4">
-                <input type="number" name="hoursDrivenBetweenBreaks" id="hoursDrivenBetweenBreaks" min="0" max="11">
+                <input type="number" class="form-control" name="hoursDrivenBetweenBreaks" id="hoursDrivenBetweenBreaks"
+                    min="0" max="11" step="any">
             </div>
         </div>
         <div class="row">
             <div class="col-4">
-                <button id="submitBtn">Submit</button>
+                <button id="submitBtn" class="btn btn-primary">Submit</button>
             </div>
         </div>
 
