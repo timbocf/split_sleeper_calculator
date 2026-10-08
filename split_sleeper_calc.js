@@ -1,6 +1,9 @@
+// split_sleeper_calc.js
+
 const maxTotalDailyHours = 14;
 const maxTotalDailyDrivingHours = 11;
 const qualifyingBreak = false;
+const submitBtn = document.getElementById("submitBtn");
 
 // User inputs length and type of first break
 const firstBreak = document.getElementById("firstBreak");
@@ -37,13 +40,15 @@ function calculateRemainingHours() {
     }
 
 
-    // If qualifying, subtract hours worked between the breaks from fourteen
-
-
-    // Subtract hours driven between the breaks from eleven
-
+    if (qualifyingBreak) {
+        // If qualifying, subtract hours worked between the breaks from fourteen
+        const remainingOndutyHours = (14 - hoursWorkedBetweenBreaks);
+        // Subtract hours driven between the breaks from eleven
+        const remainingDrivingHours = (11 - hoursDrivenBetweenBreaks);
+    }
 
     // Display remaining fourteen-hour clock.
     // Display remaining eleven-hour driving clock.
-
+    const result = document.getElementById("result");
+    result.textContent = "On-Duty Hours Remaining: " + remainingOndutyHours + " and " + remainingDrivingHours + "remaining driving hours."
 }
