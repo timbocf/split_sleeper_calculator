@@ -1,96 +1,133 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Split Sleeper Berth Break Calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <style type="text/css">
-
-
-    </style>
+    <title>Split Sleeper Berth Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <label for="firstBreak">Length of First Break: </label>
-            </div>
-            <div class="col-4 col-md-4">
-                <input type="number" class="form-control" name="firstBreak" id="firstBreak" min="0" max="10" step="any">
-            </div>
-            <div class="col-8 col-md-4">
-                <select class="form-select" name="dutyStatusFirstBreak" id="dutyStatusFirstBreak">
-                    <option value="on-duty">On-Duty</option>
-                    <option value="off-duty">Off-Duty</option>
-                    <option value="driving">Driving</option>
-                    <option value="sleeperBerth">Sleeper Berth</option>
-                </select>
+<body class="bg-light">
+
+    <div class="container py-4" style="max-width: 650px;">
+
+        <h2 class="text-center mb-4">
+            Split Sleeper Calculator
+        </h2>
+
+        <!-- BREAKS CARD -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body p-4">
+
+                <h5 class="card-title mb-4">
+                    Sleeper Berth Breaks
+                </h5>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-12">
+                        <label for="firstBreak" class="form-label fw-bold">
+                            Length of First Break
+                        </label>
+                    </div>
+
+                    <div class="col-4">
+                        <input type="number" class="form-control form-control-lg" name="firstBreak" id="firstBreak"
+                            min="0" max="10" step="any" placeholder="Hours">
+                    </div>
+
+                    <div class="col-8">
+                        <select class="form-select form-select-lg" name="dutyStatusFirstBreak"
+                            id="dutyStatusFirstBreak">
+                            <option value="on-duty">On-Duty</option>
+                            <option value="off-duty">Off-Duty</option>
+                            <option value="driving">Driving</option>
+                            <option value="sleeperBerth">Sleeper Berth</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="secondBreak" class="form-label fw-bold">
+                            Length of Second Break
+                        </label>
+                    </div>
+
+                    <div class="col-4">
+                        <input type="number" class="form-control form-control-lg" name="secondBreak" id="secondBreak"
+                            min="0" max="10" step="any" placeholder="Hours">
+                    </div>
+
+                    <div class="col-8">
+                        <select class="form-select form-select-lg" name="dutyStatusSecondBreak"
+                            id="dutyStatusSecondBreak">
+                            <option value="on-duty">On-Duty</option>
+                            <option value="off-duty">Off-Duty</option>
+                            <option value="driving">Driving</option>
+                            <option value="sleeperBerth">Sleeper Berth</option>
+                        </select>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <label for="secondBreak">Length of Second Break: </label>
-            </div>
-            <div class="col-4 col-md-4">
-                <input type="number" class="form-control" name="secondBreak" id="secondBreak" min="0" max="10"
-                    step="any">
-            </div>
-            <div class="col-8 col-md-4">
-                <select class="form-select" name="dutyStatusSecondBreak" id="dutyStatusSecondBreak">
-                    <option value="on-duty">On-Duty</option>
-                    <option value="off-duty">Off-Duty</option>
-                    <option value="driving">Driving</option>
-                    <option value="sleeperBerth">Sleeper Berth</option>
-                </select>
+        <!-- HOURS CARD -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body p-4">
+
+                <h5 class="card-title mb-4">
+                    Time Between Breaks
+                </h5>
+
+                <div class="mb-3">
+                    <label for="hoursWorkedBetweenBreaks" class="form-label fw-bold">
+                        Total Hours Between Breaks
+                    </label>
+
+                    <input type="number" class="form-control form-control-lg" name="hoursWorkedBetweenBreaks"
+                        id="hoursWorkedBetweenBreaks" min="0" max="14" step="any" placeholder="Hours">
+                </div>
+
+                <div>
+                    <label for="hoursDrivenBetweenBreaks" class="form-label fw-bold">
+                        Hours Driven Between Breaks
+                    </label>
+
+                    <input type="number" class="form-control form-control-lg" name="hoursDrivenBetweenBreaks"
+                        id="hoursDrivenBetweenBreaks" min="0" max="11" step="any" placeholder="Hours">
+                </div>
+
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-8">
-                <label for="hoursWorkedBetweenBreaks">TOTAL Hours Between Breaks: </label>
-            </div>
-            <div class="col-4">
-                <input type="number" class="form-control" name="hoursWorkedBetweenBreaks" id="hoursWorkedBetweenBreaks"
-                    min="0" max="14" step="any">
+        <!-- CALCULATE BUTTON -->
+        <div class="d-grid mb-4">
+            <button id="submitBtn" class="btn btn-primary btn-lg fw-bold">
+                Calculate Remaining Hours
+            </button>
+        </div>
+
+        <!-- RESULTS CARD -->
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+
+                <h5 class="card-title mb-3">
+                    Calculation Results
+                </h5>
+
+                <div id="resultOnduty" class="fs-5 fw-bold mb-3"></div>
+                <div id="resultDriving" class="fs-5 fw-bold"></div>
+
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-8">
-                <label for="hoursDrivenBetweenBreaks">Hours Driven Between Breaks: </label>
-            </div>
-            <div class="col-4">
-                <input type="number" class="form-control" name="hoursDrivenBetweenBreaks" id="hoursDrivenBetweenBreaks"
-                    min="0" max="11" step="any">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <button id="submitBtn" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-                <div id="resultOnduty"></div>
-            </div>
-            <div class="col-12">
-                <div id="resultDriving"></div>
-            </div>
-        </div>
     </div>
 
     <script src="split_sleeper_calc.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
